@@ -2,7 +2,13 @@ div.col {
   padding-top: 50px;
   border-radius: 500px;
   background-color: mediumaquamarine;
+  linear-gradient: mediumaquamarine, cyan;
   text-align: center;
   font-size: 50px;
   color: mintcream;
+}
+
+li {
+  list-style-type: none;
+  padding: 5%;
 }
