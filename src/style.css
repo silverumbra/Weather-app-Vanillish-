@@ -10,15 +10,4 @@ div.col {
 
 li {
   list-style-type: none;
-  padding: 5%;
-}
-
-.PerDiem {
-  background-color: blue;
-}
-
-div.col-5 {
-  padding-top: 30px;
-  background-color: purple;
-  border-radius: 300px;
 }
