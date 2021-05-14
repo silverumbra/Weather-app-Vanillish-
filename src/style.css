@@ -1,8 +1,8 @@
-div.col {
+.toolbar {
   padding-top: 50px;
   border-radius: 500px;
   background-color: mediumaquamarine;
-  linear-gradient: mediumaquamarine, cyan;
+
   text-align: center;
   font-size: 50px;
   color: mintcream;
@@ -11,4 +11,8 @@ div.col {
 li {
   list-style-type: none;
   padding: 5%;
+}
+
+.PerDiem {
+  background-color: blue;
 }
