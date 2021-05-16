@@ -29,6 +29,8 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
+    celiusTemperature = response.data.main.temp;
+
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = response.data.main.humidity;
@@ -53,8 +55,28 @@ function handleSubmit(event) {
 
 }
 
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+        let temperatureElement = document.querySelector("#temperature");
+    let fahrenheitTemperature = (celiusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
+}
 
+function displayCeliusTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celiusTemperature);
+}
+
+let celiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celiusLink = document.querySelector("#celius-link");
+celiusLink.addEventListener("click", displayCeliusTemperature);
+
