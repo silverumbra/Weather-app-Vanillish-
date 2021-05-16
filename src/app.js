@@ -4,8 +4,8 @@ function formatDate(timestamp) {
     let date = new Date(timestamp);
     let hours = date.getHours();
     let minutes = date.getMinutes();
-    let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    let day = date.getDay();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
     }
 
