@@ -20,6 +20,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
 
+console.log(response.data);
 
     let cityElement = document.querySelector("#city");
     let temperatureElement = document.querySelector("#temperature");
@@ -41,8 +42,7 @@ function displayTemperature(response) {
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
-    precipitationElement.innerHTML - response.data.main.precipitation;
-
+    precipitationElement.innerHTML = response.data.minutely.precipitation;
 
 
 }
@@ -79,6 +79,7 @@ function displayCeliusTemperature(event) {
     temperatureElement.innerHTML = Math.round(celiusTemperature);
 }
 
+
 let celiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -89,3 +90,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celiusLink = document.querySelector("#celius-link");
 celiusLink.addEventListener("click", displayCeliusTemperature);
+
