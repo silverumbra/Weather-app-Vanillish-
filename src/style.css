@@ -15,3 +15,8 @@ li {
 li::first-letter {
   text-transform: capitalize;
 }
+
+div .active {
+  color: white;
+  text-decoration: none;
+}
