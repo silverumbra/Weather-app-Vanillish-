@@ -21,20 +21,26 @@ function formatDate(timestamp) {
 
 
 function displayTemperature(response) {
+
+
     let cityElement = document.querySelector("#city");
     let temperatureElement = document.querySelector("#temperature");
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
+
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = response.data.main.humidity;
     descriptionElement.innerHTML = response.data.weather[0].description;
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let city = "Berlin";
+let city = "Tokyo";
 let apiKey = "edb378f0be539a4b2c5c96da53e9f0c1";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
